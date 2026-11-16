@@ -11,7 +11,11 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const other = locale === "en" ? { lang: "ar", dir: "rtl", align: "text-left" } : { lang: "en", dir: "ltr", align: "text-right" };
 
   return (
-    <section aria-labelledby="hero-title" className="relative isolate overflow-hidden border-b-[3px] border-ink bg-brand text-cream">
+    // Desktop: clip sideways only, so the rooster sticker can hang over the edge into the next section
+    <section
+      aria-labelledby="hero-title"
+      className="relative isolate z-10 overflow-hidden border-b-[3px] border-ink bg-brand text-cream lg:overflow-x-clip lg:overflow-y-visible"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="relative z-10 pt-9 sm:pt-14 lg:pt-16 lg:pb-28">
           <a
@@ -62,8 +66,13 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
         </div>
 
         {/* The rooster, leaning on the pile (and hiding its cut edge from 640px up) */}
-        <div className="absolute start-[5%] bottom-[34%] w-28 sm:start-auto sm:end-[35.5rem] sm:-bottom-6 sm:w-36 lg:end-auto lg:start-[-6rem] lg:-bottom-10 lg:w-56">
-          <Image src={sticker} alt="" sizes="(min-width: 1024px) 224px, 144px" className="float h-auto w-full -rotate-6" />
+        <div className="absolute start-[5%] bottom-[34%] w-28 sm:start-auto sm:end-[35.5rem] sm:-bottom-6 sm:w-36 lg:end-auto lg:start-[-6rem] lg:-bottom-16 lg:w-56">
+          <Image
+            src={sticker}
+            alt=""
+            sizes="(min-width: 1024px) 224px, 144px"
+            className="float h-auto w-full -rotate-6 lg:drop-shadow-[0_14px_18px_rgb(0_0_0/0.4)]"
+          />
           <p className="absolute -top-9 start-[72%] w-max max-w-[11rem] rotate-2 rounded-2xl border-[3px] border-ink bg-white px-3.5 py-2 text-sm leading-snug font-bold text-ink sm:text-base lg:-top-4 lg:start-[80%]">
             {t.bubble}
             <span
