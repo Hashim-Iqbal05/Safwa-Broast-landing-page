@@ -1,0 +1,168 @@
+﻿@import "tailwindcss";
+
+/* ───────────────────────── Safwa design tokens ─────────────────────────
+   Flat, poster-like system: solid fields of cream / red / ink, thick ink outlines
+   (like the logo's linework), hard offset blocks instead of shadows or glows.
+   Contrast:
+   - white on brand (#E02A31) = 4.6:1 → OK for button text
+   - brand-deep (#B8222A) for small red text on cream
+   - yolk only as a fill, never as text on cream                            */
+@theme {
+  --color-brand: #e02a31;
+  --color-brand-deep: #b8222a;
+  --color-maroon: #842f30;
+  --color-yolk: #fcee3b;
+  --color-gold: #f2c431;
+  --color-cream: #fff6e9;
+  --color-cream-2: #f7e9d3;
+  --color-ink: #1b1412;
+
+  --font-sans: var(--font-rubik), system-ui, sans-serif;
+
+  --radius-card: 1.75rem;
+}
+
+html {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding-inline: 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    transition:
+      background-color 0.15s,
+      transform 0.15s;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--color-brand);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: var(--color-brand-deep);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
+
+
+/* ───────────────────────── Motion ─────────────────────────
+   Small, purposeful, CSS-only. All of it is switched off for prefers-reduced-motion. */
+
+/* The rooster bobs gently */
+@keyframes float {
+  50% {
+    translate: 0 -8px;
+  }
+}
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Phone screenshot scrolls down, pauses, scrolls back up, as if someone is browsing */
+@keyframes screen-scroll {
+  0%,
+  12% {
+    object-position: 50% 0%;
+  }
+  45%,
+  60% {
+    object-position: 50% 100%;
+  }
+  92%,
+  100% {
+    object-position: 50% 0%;
+  }
+}
+.screen-scroll {
+  animation: screen-scroll 14s ease-in-out infinite;
+}
+
+/* Device screen "tour": scrolls the app screenshot down, pauses, and back up.
+   --tour-end is set inline (how far to scroll for that screenshot). */
+@keyframes screen-tour {
+  0%,
+  14% {
+    translate: 0 0;
+  }
+  45%,
+  58% {
+    translate: 0 var(--tour-end, 0px);
+  }
+  88%,
+  100% {
+    translate: 0 0;
+  }
+}
+.screen-tour {
+  animation: screen-tour 16s ease-in-out infinite;
+}
+
+/* Pulse on the driver's map marker */
+@keyframes ping-ring {
+  0% {
+    scale: 0.8;
+    opacity: 0.8;
+  }
+  100% {
+    scale: 2.6;
+    opacity: 0;
+  }
+}
+.ping-ring {
+  animation: ping-ring 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Thermal receipt: torn zigzag bottom edge */
+.receipt {
+  --zig: 9px;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / calc(2 * var(--zig)) 100%;
+}
+
+/* The receipt "prints" (unrolls from the top) as it scrolls into view */
+@keyframes print {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@supports (animation-timeline: view()) {
+  .print {
+    animation: print linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .float,
+  .screen-scroll,
+  .screen-tour,
+  .ping-ring,
+  .print {
+    animation: none;
+  }
+  .ping-ring {
+    display: none;
+  }
+}
