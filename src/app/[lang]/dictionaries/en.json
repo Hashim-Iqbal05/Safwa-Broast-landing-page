@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Safwa Broast | Broast from Al Qafilah, Khamis Mushait. App coming soon",
-    "description": "Safwa Broast in Al Qafilah, Khamis Mushait. Our ordering app is coming soon to iPhone and Android: order, track your food to your door, and pay with mada, Apple Pay or cash.",
+    "description": "Safwa Broast in Al Qafilah, Khamis Mushait. Our app for iPhone and Android is coming soon, so you can order ahead and track your delivery to the door.",
     "siteName": "Safwa Broast"
   },
   "brand": "Safwa Broast",
@@ -13,28 +13,28 @@
   },
   "hero": {
     "location": "Al Qafilah, Khamis Mushait",
-    "titleLead": "Skip the queue.",
-    "titleAccent": "Keep the crunch.",
-    "altLine": "بدون طابور. وبنفس القرمشة.",
-    "subtitle": "The Safwa Broast app is almost here. Order from our Al Qafilah kitchen and follow it to your door.",
+    "titleLead": "Your broast,",
+    "titleAccent": "without the wait.",
+    "altLine": "بروستك بدون انتظار.",
+    "subtitle": "Our app is nearly ready. You'll order from the Al Qafilah kitchen on your phone and track the driver to your door.",
     "badgesLabel": "Coming soon on",
     "photoAlt": "A pile of golden fried broast chicken",
-    "bubble": "Almost ready. Patience."
+    "bubble": "Don't rush me."
   },
   "tracking": {
     "title": "Watch it come to you.",
-    "body": "The app follows your order live, from the fryer in Al Qafilah to your door. No more calling to ask where it is.",
+    "body": "The app shows where your order is at every stage, from the fryer in Al Qafilah to your door, so you won't need to call and ask.",
     "steps": [
       { "title": "Confirmed", "body": "The kitchen has your order." },
-      { "title": "Preparing", "body": "Into the fryer." },
-      { "title": "On the way", "body": "Your driver, live on the map." },
-      { "title": "Arrived", "body": "Hot broast at your door." }
+      { "title": "Preparing", "body": "It's in the fryer." },
+      { "title": "On the way", "body": "You can follow the driver on the map." },
+      { "title": "Arrived", "body": "The driver is at your door." }
     ],
     "screenAlt": "Live tracking in the Safwa app: order #AS-8821 is on the way, with the driver on the map, 12 minutes left and the driver's details."
   },
   "extras": {
-    "title": "The small stuff, sorted.",
-    "body": "Pickup or delivery, how you pay, where it goes. Set it once and the app remembers.",
+    "title": "It remembers how you order.",
+    "body": "Save your address and payment method once. Next time, your usual order is one tap away.",
     "screenAlt": "Home screen of the Safwa app with food categories and the Family Broast Meal offer",
     "receipt": {
       "store": "Safwa Broast",
@@ -47,7 +47,7 @@
         { "label": "Delivery or pickup", "value": "Your call" },
         { "label": "mada / Apple Pay / cash", "value": "Accepted" },
         { "label": "Reward points", "value": "Every order" },
-        { "label": "App-only offers", "value": "Included" },
+        { "label": "Offers", "value": "App only" },
         { "label": "Reorder your usual", "value": "1 tap" },
         { "label": "Saved addresses", "value": "Home, work…" }
       ],
@@ -58,8 +58,8 @@
   },
   "footer": {
     "ctaTitle": "See you on the app.",
-    "ctaBody": "Launching soon on iPhone and Android. Until then, you know where to find us.",
-    "tagline": "Broast from Al Qafilah, Khamis Mushait.",
+    "ctaBody": "The app is coming to iPhone and Android soon. Until then, come and see us in Al Qafilah.",
+    "tagline": "Broast, burgers and pizza in Al Qafilah, Khamis Mushait.",
     "explore": "Explore",
     "links": {
       "features": "Order tracking",
@@ -70,7 +70,7 @@
     "address": "Opp. Husam Medical Clinic, Nasr Addin Al Tusi Street, Al Qafilah, Khamis Mushait",
     "directions": "Get directions",
     "phonePlaceholder": "Phone: [PHONE NUMBER]",
-    "hours": "Open 4 pm – 2 am",
+    "hours": "Open 4 pm to 2 am",
     "follow": "Follow us",
     "rights": "All rights reserved.",
     "privacy": "Privacy policy",
