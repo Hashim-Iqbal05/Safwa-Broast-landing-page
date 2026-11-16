@@ -1,14 +1,16 @@
 // Site-wide facts shared by both languages.
 // Anything marked PLACEHOLDER must be confirmed before launch.
 
-// Production address, used for canonical URLs and social-share previews.
-// Set NEXT_PUBLIC_SITE_URL (e.g. https://safwabroast.com) once you have your own domain.
-// Until then Vercel's production address is used automatically.
+// Address used for canonical URLs and social-share previews.
+// Production uses the primary domain (safwabroast.com redirects to www in Vercel);
+// preview deployments use their own Vercel URL. NEXT_PUBLIC_SITE_URL overrides both.
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+  (process.env.VERCEL_ENV === "production"
+    ? "https://www.safwabroast.com"
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000");
 
 export const site = {
   url: siteUrl,
